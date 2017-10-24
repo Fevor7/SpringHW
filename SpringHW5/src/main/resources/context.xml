@@ -14,11 +14,12 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 	<aop:config>
 		<aop:pointcut id="perfomance" expression="execution(* by.it.bean2.TaskService.performJob())" />
 		<aop:pointcut id="perfomanceException" expression="execution(* by.it.bean2.TaskService.performExceptionJob())" />
-		<aop:pointcut id="perfomanceAround" expression="execution(* by.it.bean2.TaskService.performExceptionJob())" />
+		<aop:pointcut id="perfomanceAround" expression="execution(* by.it.bean2.TaskService.performJobAround())" />
 		<aop:aspect ref="work">
 			<aop:before pointcut-ref="perfomance" method="beforeWork" />
 			<aop:after-returning pointcut-ref="perfomance" method="afterWork" />
 			<aop:after-throwing pointcut-ref="perfomanceException"  method="afterWorkproblems" />
+			<aop:around method="aroundWork" pointcut-ref="perfomanceAround"/>
 		</aop:aspect>
 	</aop:config>
 </beans>

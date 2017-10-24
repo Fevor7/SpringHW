@@ -11,6 +11,7 @@ public class Main {
 			ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
 			TaskService bean = (TaskService) context.getBean("taskService");
 			bean.performJob();
+			bean.performJobAround();
 			try {
 				bean.performExceptionJob();
 			} catch (Exception e) {
