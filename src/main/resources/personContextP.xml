@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-init-method="initMethod" default-destroy-method="destroyMethod">
+	<bean id="person" class="by.it.bean.Person" factory-method="getInstance" p:name="Viktor" p:surname="Grinko" p:address-ref="address"/>
+	<bean id="address" class="by.it.bean.Address" p:id="1" p:street="Maykovskogo"/>
+	<bean id="constructorBean" class="by.it.bean.ConstructorBean">
+		<constructor-arg index="0" value="Fevor" />
+	</bean>
+</beans>

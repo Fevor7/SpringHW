@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-init-method="initMethod" default-destroy-method="destroyMethod">
+	<bean id="person" class="by.it.beancollect.Person">
+		<property name="address" ref="address" />
+	</bean>
+	<bean id="address" class="by.it.beancollect.Address">
+		<property name="id" value="1" />
+		<property name="home" value="5" />
+		<property name="street" value="Maykovskogo" />
+		<property name="flats">
+			<list>
+				<value>43</value>
+				<value>39</value>
+				<value>12</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="collectionBean" class="by.it.beancollect.CollectionBean">
+		<property name="names">
+			<set>
+				<value>Ivan</value>
+				<value>Viktor</value>
+			</set>
+		</property>
+		<property name="cars">
+			<set>
+				<value>Porsche</value>
+				<value>Audi</value>
+			</set>
+		</property>
+		<property name="cities">
+			<set>
+				<value>Minsk</value>
+				<value>London</value>
+			</set>
+		</property>
+	</bean>
+	<bean id="mapBean" class="by.it.beancollect.MapBean">
+		<property name="nameMap">
+			<map>
+				<entry key="1" value="Viktor" />
+				<entry key="2" value="Ivan" />
+			</map>
+		</property>
+	</bean>
+	<bean id="propsBean" class="by.it.beancollect.PropsBean">
+		<property name="props">
+			<props>
+				<prop key="name">Ivan</prop>
+				<prop key="surname">Petrov</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="nullValueBean" class="by.it.beancollect.NullValueBean">
+		<property name="work">
+			<null/>
+		</property>
+	</bean>
+	
+</beans>
