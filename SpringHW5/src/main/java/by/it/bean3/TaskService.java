@@ -1,4 +1,4 @@
-package by.it.bean2;
+package by.it.bean3;
 
 import org.springframework.stereotype.Service;
 
@@ -19,12 +19,7 @@ public class TaskService {
 		return "SUCCESS";
 	}
 	
-	public String jobAround(String name) {
-		System.out.println("jobAround method: " + name);
-		return "SUCCESS";
-	}
-	
-	public void performJob(String name, String name2) {
-		System.out.println("Job name: " + name  + " h: " + name2);
+	public void performJob(String name) {
+		System.out.println("Job name: " + name);
 	}
 }

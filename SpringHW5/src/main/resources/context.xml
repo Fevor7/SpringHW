@@ -15,8 +15,16 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 		<aop:pointcut id="perfomance" expression="execution(* by.it.bean2.TaskService.performJob())" />
 		<aop:pointcut id="perfomanceException" expression="execution(* by.it.bean2.TaskService.performExceptionJob())" />
 		<aop:pointcut id="perfomanceAround" expression="execution(* by.it.bean2.TaskService.performJobAround())" />
+		<aop:pointcut id="perfomanceAroundTwo" expression="execution(* by.it.bean2.TaskService.jobAround(..)) and args(name)" />
+		<aop:pointcut id="perfomanceName" expression="execution(* by.it.bean2.TaskService.performJob(..)) and args(name,name2)" />
 		<aop:aspect ref="work">
 			<aop:before pointcut-ref="perfomance" method="beforeWork" />
+			<aop:before 
+				pointcut-ref="perfomanceName"
+				method="interceptWorkName"/>
+			<aop:around
+				pointcut-ref="perfomanceAroundTwo"
+				method="aroundWork2"/>
 			<aop:after-returning pointcut-ref="perfomance" method="afterWork" />
 			<aop:after-throwing pointcut-ref="perfomanceException"  method="afterWorkproblems" />
 			<aop:around method="aroundWork" pointcut-ref="perfomanceAround"/>
