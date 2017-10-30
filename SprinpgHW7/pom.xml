@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<groupId>by.it</groupId>
-	<artifactId>SpringHW6V3</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+  <groupId>by.it</groupId>
+  <artifactId>SprinpgHW7</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
-	<name>SpringHW6V3</name>
-	<url>http://maven.apache.org</url>
+  <name>SprinpgHW7</name>
+  <url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,6 +19,7 @@
 		<hibernate.version>5.2.11.Final</hibernate.version>
 		<jdbc.version>6.0.6</jdbc.version>
 		<apache.commons>2.1.1</apache.commons>
+		<spring.data>2.0.0.RELEASE</spring.data>
 	</properties>
 
 	<dependencies>
@@ -36,6 +37,11 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
 			<version>${springVersion}</version>
+		</dependency>
+				<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${spring.data}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
